@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our luxury and photographic safari packages. Filter by category, search by park, and book your custom African expedition online.">
+    <title>Safari Packages | WildJourneys</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/safari.css?v=1.1">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <svg class="brand-icon" viewBox="0 0 24 24">
+                <path d="M12,2A10,10,0,0,0,2,12A10,10,0,0,0,12,22A10,10,0,0,0,22,12A10,10,0,0,0,12,2ZM12,4A8,8,0,0,1,20,12A8,8,0,0,1,12,20A8,8,0,0,1,4,12A8,8,0,0,1,12,4Z"/>
+                <path d="M12,6C9,6,6.5,8,5.2,10.7C6.8,11.5,8.8,12,11,12C13.2,12,15.2,11.5,16.8,10.7C15.5,8,13,6,12,6Z" fill="#e5a93c"/>
+            </svg>
+            <span>stackly</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="safari.html" class="active">Safari</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="mobile-login"><a href="login.html" class="btn-login"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>Login</span></a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                <span>Login</span>
+            </a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Safari Hero Section -->
+    <header class="safari-hero">
+        <div class="safari-hero-content">
+            <h1>Find Your Wilderness.</h1>
+            <p>From photography tours to luxury lodge retreats, filter and find your perfect African expedition.</p>
+        </div>
+    </header>
+
+    <!-- Search & Filter Controls -->
+    <section class="packages-section">
+        <div class="filter-search-container">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">All Safaris</button>
+                <button class="filter-btn" data-filter="photography">Photography</button>
+                <button class="filter-btn" data-filter="luxury">Luxury Lodge</button>
+                <button class="filter-btn" data-filter="family">Family</button>
+                <button class="filter-btn" data-filter="camping">Classic Camping</button>
+            </div>
+            <div class="search-box">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="search-input" placeholder="Search destinations...">
+            </div>
+        </div>
+
+        <!-- Safari Grid -->
+        <div class="packages-grid">
+            <!-- Tour 1 -->
+            <div class="safari-card package-card" data-category="photography" data-title="serengeti predator chase tanzania">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">Best Seller</span>
+                    <img src="assets/opt_photo-1547471080-7cc2caa01a7e_a420f6f1.webp" alt="Serengeti Safari">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>Tanzania</span>
+                        <span>6 Days / 5 Nights</span>
+                    </div>
+                    <h3>Serengeti Predator Chase</h3>
+                    <p>Track magnificent prides of lions and elusive leopards across the endless golden plains of the Serengeti, followed by a luxury stay in our private tented camp.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$3,450</span>
+                        </div>
+                        <button class="btn-card book-btn" data-tour="Serengeti Predator Chase ($3,450)">Book Tour</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 2 -->
+            <div class="safari-card package-card" data-category="luxury" data-title="okavango delta water safari botswana">
+                <div class="card-img-wrapper">
+                    <img src="assets/opt_photo-1557050543-4d5f4e07ef46_ba26f276.webp" alt="Okavango Delta Safari">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>Botswana</span>
+                        <span>8 Days / 7 Nights</span>
+                    </div>
+                    <h3>Okavango Delta Water Safari</h3>
+                    <p>Navigate tranquil waterways by traditional mokoro canoe and encounter large herds of elephants, hippos, and rare bird species in this lush wetland paradise.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$4,900</span>
+                        </div>
+                        <button class="btn-card book-btn" data-tour="Okavango Delta Water Safari ($4,900)">Book Tour</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 3 -->
+            <div class="safari-card package-card" data-category="family" data-title="masai mara great migration kenya">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">Limited Time</span>
+                    <img src="assets/opt_photo-1516426122078-c23e76319801_ae164e8d.webp" alt="Masai Mara Safari">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>Kenya</span>
+                        <span>5 Days / 4 Nights</span>
+                    </div>
+                    <h3>Masai Mara Great Migration</h3>
+                    <p>Witness the world's most spectacular wildlife event as millions of wildebeests and zebras cross the Mara River, facing apex river predators.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$2,980</span>
+                        </div>
+                        <button class="btn-card book-btn" data-tour="Masai Mara Great Migration ($2,980)">Book Tour</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 4 -->
+            <div class="safari-card package-card" data-category="photography" data-title="kruger big five tracking south africa">
+                <div class="card-img-wrapper">
+                    <img src="assets/opt_photo-1456926631375-92c8ce872def_c2319e9b.webp" alt="Kruger Leopard">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>South Africa</span>
+                        <span>7 Days / 6 Nights</span>
+                    </div>
+                    <h3>Kruger Big Five Tracking</h3>
+                    <p>Drive in search of the iconic African Big Five—lion, leopard, rhino, elephant, and buffalo—led by seasoned rangers in the private Sabi Sands Reserve.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$3,150</span>
+                        </div>
+                        <button class="btn-card book-btn" data-tour="Kruger Big Five Tracking ($3,150)">Book Tour</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 5 -->
+            <div class="safari-card package-card" data-category="camping" data-title="chobe river elephant safari namibia botswana">
+                <div class="card-img-wrapper">
+                    <img src="assets/opt_photo-1502082553048-f009c37129b9_48b75cad.webp" alt="Chobe Elephants">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>Botswana</span>
+                        <span>4 Days / 3 Nights</span>
+                    </div>
+                    <h3>Chobe River Mobile Camping</h3>
+                    <p>Immerse yourself in nature with classic luxury tents under the stars. Enjoy boat cruises on the Chobe River, home to Africa's dense elephant population.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$2,250</span>
+                        </div>
+                        <button class="btn-card book-btn" data-tour="Chobe River Mobile Camping ($2,250)">Book Tour</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 6 -->
+            <div class="safari-card package-card" data-category="luxury" data-title="gorilla trekking forest expedition rwanda">
+                <div class="card-img-wrapper">
+                    <img src="assets/gorila.jfif" alt="Gorilla Forest">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>Rwanda</span>
+                        <span>6 Days / 5 Nights</span>
+                    </div>
+                    <h3>Gorilla Forest Expedition</h3>
+                    <p>Trek into the bamboo slopes of Volcanoes National Park to encounter majestic mountain gorilla families up close, staying at an ultra-luxury eco-lodge.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$5,600</span>
+                        </div>
+                        <button class="btn-card book-btn" data-tour="Gorilla Forest Expedition ($5,600)">Book Tour</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 7 -->
+            <div class="safari-card package-card" data-category="luxury" data-title="ngorongoro crater retreat tanzania">
+                <div class="card-img-wrapper">
+                    <img src="assets/opt_photo-1540962351504-03099e0a754b_58f34fea.webp" alt="Ngorongoro Crater Retreat">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>Tanzania</span>
+                        <span>4 Days / 3 Nights</span>
+                    </div>
+                    <h3>Ngorongoro Crater Retreat</h3>
+                    <p>Experience unparalleled luxury at the edge of the Ngorongoro Crater. Enjoy game drives in the crater floor and relax in a world-class lodge with breathtaking views.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$4,200</span>
+                        </div>
+                        <button class="btn-card book-btn" data-tour="Ngorongoro Crater Retreat ($4,200)">Book Tour</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 8 -->
+            <div class="safari-card package-card" data-category="family" data-title="amboseli elephant family adventure kenya">
+                <div class="card-img-wrapper">
+                    <img src="assets/opt_photo-1501555088652-021faa106b9b_5cddd760.webp" alt="Amboseli Elephant Family Adventure">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>Kenya</span>
+                        <span>5 Days / 4 Nights</span>
+                    </div>
+                    <h3>Amboseli Elephant Family</h3>
+                    <p>A perfect safari for the whole family. Get close to massive elephant herds with Mount Kilimanjaro as your backdrop, featuring kid-friendly guided activities.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$2,100</span>
+                        </div>
+                        <button class="btn-card book-btn" data-tour="Amboseli Elephant Family ($2,100)">Book Tour</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 9 -->
+            <div class="safari-card package-card" data-category="camping" data-title="serengeti starry night camping tanzania">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">Popular</span>
+                    <img src="assets/opt_photo-1502082553048-f009c37129b9_7589d1cc.webp" alt="Serengeti Starry Night Camping">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>Tanzania</span>
+                        <span>7 Days / 6 Nights</span>
+                    </div>
+                    <h3>Serengeti Starry Night Camping</h3>
+                    <p>Immerse yourself in the wild with our classic mobile camping experience. Sleep under the African stars and wake up to the sounds of the Serengeti.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$1,850</span>
+                        </div>
+                        <button class="btn-card book-btn" data-tour="Serengeti Starry Night Camping ($1,850)">Book Tour</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Best Time to Visit Section -->
+    <section class="best-time-section">
+        <div class="best-time-container">
+            <div class="best-time-content">
+                <span class="subtitle">Seasonal Guide</span>
+                <h2>Best Time to Visit</h2>
+                <div class="subtitle-underline"></div>
+                <p class="intro-text">Timing your safari is crucial for the best wildlife viewing experience. The African savanna changes dramatically with the seasons.</p>
+                <div class="best-time-list">
+                    <div class="time-item">
+                        <span class="time-season">June to October:</span>
+                        <span class="time-desc">Dry season. Animals congregate around waterholes. Clear skies, cooling temperatures, and prime conditions for the Great Migration crossings.</span>
+                    </div>
+                    <div class="time-item">
+                        <span class="time-season">November to May:</span>
+                        <span class="time-desc">Green season. Lush green landscapes, bird migrations, and newborn calving in the Serengeti. Ideal for photography with fewer crowds.</span>
+                    </div>
+                    <div class="time-item">
+                        <span class="time-season">April to May:</span>
+                        <span class="time-desc">Heavy rain period. Concessions become lush and green, offering dramatic photography backdrops, though some low-lying mobile camps close.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="best-time-image-wrapper">
+                <img src="assets/opt_photo-1502082553048-f009c37129b9_218c8bb6.webp" alt="African savanna acacia tree at golden hour">
+            </div>
+        </div>
+    </section>
+
+    <!-- Safari Achievements & Stats Section -->
+  
+    
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq-section">
+        <div class="section-header">
+            <span class="subtitle">Got Questions?</span>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What is the best time of year to go on a safari?</span>
+                    <svg viewBox="0 0 24 24" class="faq-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>The best time varies by park. For the Serengeti Great Migration, July to October is ideal. For general big game viewing, the dry seasons (June to October and January to February) are best across most parks.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What should I pack for my bush trip?</span>
+                    <svg viewBox="0 0 24 24" class="faq-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>We recommend lightweight, neutral-colored clothing (khaki, beige, olive), a wide-brimmed hat, sturdy walking shoes, binoculars, insect repellent, and a high-quality camera. Avoid bright colors and blue/black colors which attract tsetse flies.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Are airport transfers and local flights included?</span>
+                    <svg viewBox="0 0 24 24" class="faq-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, all our multi-day packages include airport meet-and-greet, ground transfers in custom 4x4s, and internal bush flights between concessions as detailed in the itineraries.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How does my trip support conservation?</span>
+                    <svg viewBox="0 0 24 24" class="faq-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="faq-answer">
+                    <p>We dedicate 15% of all booking profits directly to anti-poaching units, wildlife rangers, and regional schools. We also practice 100% carbon-offset travel and support local community concessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal Overlay -->
+    <div class="modal-overlay" id="booking-modal-overlay">
+        <div class="booking-modal">
+            <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
+                <svg viewBox="0 0 24 24">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2>Inquire About Your Safari</h2>
+            <p>Fill out the form below, and our wildlife travel designers will compile a custom safari proposal for you.</p>
+            <form class="modal-form" id="booking-inquiry-form">
+                <div class="form-group">
+                    <label for="modal-tour-name">Selected Safari</label>
+                    <input type="text" id="modal-tour-name" readonly>
+                </div>
+                <div class="modal-form-row">
+                    <div class="form-group">
+                        <label for="modal-name">Full Name</label>
+                        <input type="text" id="modal-name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-email">Email Address</label>
+                        <input type="email" id="modal-email" required placeholder="john@example.com">
+                    </div>
+                </div>
+                <div class="modal-form-row">
+                    <div class="form-group">
+                        <label for="modal-date">Target Date</label>
+                        <input type="date" id="modal-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-guests">Number of Guests</label>
+                        <select id="modal-guests" required>
+                            <option value="1">1 Guest</option>
+                            <option value="2" selected>2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5+">5+ Guests</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="modal-notes">Special Requests / Requirements</label>
+                    <textarea id="modal-notes" placeholder="e.g. Dietary restrictions, private tracker request, photography equipment hire..."></textarea>
+                </div>
+                <button type="submit" class="btn-modal-submit">Submit Booking Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <h4>stackly</h4>
+                <p>Creating immersive, authentic wildlife adventures that protect our planet's wild spaces and support indigenous communities.</p>
+                <div class="social-links">
+                    <a href="404.html" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.27l-4.2-.08c-4.7,0-5.8,3.5-5.8,5.7v1.6H5v4.6H8.5v12h5.3v-12h3.9l.5-4.6Z"/></svg>
+                    </a>
+                    <a href="404.html" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12,2.16c3.2,0,3.58,0,4.85.07,3.26.15,4.72,1.63,4.87,4.87,0,1.27.07,1.64.07,4.85s0,3.58-.07,4.85c-.15,3.23-1.61,4.71-4.87,4.87-1.27.07-1.64.07-4.85.07s-3.58,0-4.85-.07c-3.26-.15-4.72-1.63-4.87-4.87,0-1.27-.07-1.64-.07-4.85s0-3.58.07-4.85C2.45,3.87,3.91,2.39,7.15,2.23,8.42,2.17,8.8,2.16,12,2.16M12,0C8.74,0,8.33,0,7.05.07a12,12,0,0,0-4,1A8.25,8.25,0,0,0,.78,3.31,12,12,0,0,0,0,7.05C0,8.33,0,8.74,0,12s0,3.67.07,4.95a12,12,0,0,0,1,4,8.25,8.25,0,0,0,2.24,2.24,12,12,0,0,0,4,.78C8.33,24,8.74,24,12,24s3.67,0,4.95-.07a12,12,0,0,0,4-1a8.29,8.29,0,0,0,2.24-2.24,12,12,0,0,0,.78-4C24,15.67,24,15.26,24,12s0-3.67-.07-4.95a12,12,0,0,0-1-4,8.29,8.29,0,0,0-2.24-2.24,12,12,0,0,0-4-.78C15.67,0,15.26,0,12,0Z"/><path d="M12,5.83A6.17,6.17,0,1,0,18.17,12,6.17,6.17,0,0,0,12,5.83ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16Z"/><circle cx="18.4" cy="5.6" r="1.43"/></svg>
+                    </a>
+                    <a href="404.html" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24"><path d="M23.5,6.2A3,3,0,0,0,21.4,4.1C19.5,3.6,12,3.6,12,3.6s-7.5,0-9.4.5A3,3,0,0,0,.5,6.2C0,8.1,0,12,0,12s0,3.9.5,5.8a3,3,0,0,0,2.1,2.1c1.9.5,9.4.5,9.4.5s7.5,0,9.4-.5a3,3,0,0,0,2.1-2.1C24,15.9,24,12,24,12S24,8.1,23.5,6.2ZM9.5,15.5V8.5L15.8,12Z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Destinations</h4>
+                <ul>
+                    <li><a href="404.html">Serengeti, Tanzania</a></li>
+                    <li><a href="404.html">Masai Mara, Kenya</a></li>
+                    <li><a href="404.html">Kruger, South Africa</a></li>
+                    <li><a href="404.html">Okavango, Botswana</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="404.html">Our Story</a></li>
+                    <li><a href="404.html">Safari Packages</a></li>
+                    <li><a href="404.html">Travel Journal</a></li>
+                    <li><a href="404.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Join the Pride</h4>
+                <div class="newsletter-form">
+                    <p>Subscribe for rare wildlife updates, early-bird package alerts, and conservation news.</p>
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Your Email Address" aria-label="Email address">
+                        <button type="submit">Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 stackly WildJourneys. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

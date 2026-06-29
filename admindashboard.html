@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin dashboard to audit inquiries, manage booking schedules, and edit pricing levels.">
+    <title>Admin Dashboard | WildJourneys</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/userdashboard.css">
+    <link rel="stylesheet" href="css/admindashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation (Shares template rules with user dashboard) -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="sidebar-logo">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,2A10,10,0,0,0,2,12A10,10,0,0,0,12,22A10,10,0,0,0,22,12A10,10,0,0,0,12,2ZM12,4A8,8,0,0,1,20,12A8,8,0,0,1,12,20A8,8,0,0,1,4,12A8,8,0,0,1,12,4Z"/>
+                        <path d="M12,6C9,6,6.5,8,5.2,10.7C6.8,11.5,8.8,12,11,12C13.2,12,15.2,11.5,16.8,10.7C15.5,8,13,6,12,6Z" fill="#e5a93c"/>
+                    </svg>
+                    <span>stackly</span>
+                </div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item">
+                        <button class="active" id="menu-btn-overview" onclick="toggleAdminView('overview')">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+                            <span>Inquiries Audit</span>
+                        </button>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <button id="menu-btn-packages" onclick="toggleAdminView('packages')">
+                            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                            <span>Manage Packages</span>
+                        </button>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <button id="menu-btn-fleet" onclick="toggleAdminView('fleet')">
+                            <svg viewBox="0 0 24 24"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-1.1 0-2 .9-2 2v10h2"></path><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                            <span>Vehicle Fleet</span>
+                        </button>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <button id="menu-btn-guides" onclick="toggleAdminView('guides')">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <span>Guide Roster</span>
+                        </button>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <button id="menu-btn-finances" onclick="toggleAdminView('finances')">
+                            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            <span>Financial Reports</span>
+                        </button>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <button id="menu-btn-contents" onclick="toggleAdminView('contents')">
+                            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            <span>Site Contents</span>
+                        </button>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <button id="menu-btn-settings" onclick="toggleAdminView('settings')">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                            <span>System Settings</span>
+                        </button>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <button onclick="window.location.href='index.html'">
+                            <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                            <span>Log Out</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-user">
+                <img src="assets/opt_photo-1507003211169-0a1dd7228f2d_b2b3994b.webp" alt="Joseph Taraya">
+                <div class="user-details">
+                    <span class="user-name">Joseph Taraya</span>
+                    <span class="user-role">Administrator</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard Panel -->
+        <main class="main-content">
+            <div class="dashboard-header">
+                <div>
+                    <span style="color: var(--primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Control Panel,</span>
+                    <h1>Wildlife Admin Dashboard</h1>
+                </div>
+                <div class="header-user" style="display: flex; align-items: center; gap: 12px; padding: 12px 24px; background-color: var(--bg-card); border: 1px solid var(--glass-border); border-radius: 8px;">
+                    <img src="assets/opt_photo-1507003211169-0a1dd7228f2d_b2b3994b.webp" alt="Joseph Taraya" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--primary);">
+                    <div class="user-details" style="display: flex; flex-direction: column;">
+                        <span class="user-name" style="font-weight: 600; font-size: 0.95rem; color: var(--text-white);">Joseph Taraya</span>
+                        <span class="user-role" style="font-size: 0.8rem; color: var(--primary); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">Administrator</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Overview Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">$184,200</span>
+                        <span class="stat-label">Monthly Revenue</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value" id="pending-count">2 Pending</span>
+                        <span class="stat-label">Safari Inquiries</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">15 Active</span>
+                        <span class="stat-label">Cruisers in Bush</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">8 Guides</span>
+                        <span class="stat-label">Available Today</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Views -->
+            <!-- 1. Booking Inquiries Table View -->
+            <div class="dashboard-view active" id="view-overview">
+                <div class="table-card">
+                    <h2>Recent Booking Inquiries</h2>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Traveler</th>
+                                    <th>Selected Safari</th>
+                                    <th>Target Date</th>
+                                    <th>Guests</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Sighting 1 -->
+                                <tr id="inquiry-row-1">
+                                    <td>Sarah Mitchell</td>
+                                    <td>Serengeti Predator Chase</td>
+                                    <td>Oct 12, 2026</td>
+                                    <td>2 Guests</td>
+                                    <td><span class="badge-status pending" id="status-span-1">Pending</span></td>
+                                    <td id="actions-td-1">
+                                        <div style="display: flex; gap: 8px;">
+                                            <button class="btn-action-approve" onclick="auditInquiry(1, 'approve')">Approve</button>
+                                            <button class="btn-action-reject" onclick="auditInquiry(1, 'reject')">Reject</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <!-- Sighting 2 -->
+                                <tr id="inquiry-row-2">
+                                    <td>David Vance</td>
+                                    <td>Okavango Delta Water Safari</td>
+                                    <td>Nov 04, 2026</td>
+                                    <td>3 Guests</td>
+                                    <td><span class="badge-status approved">Approved</span></td>
+                                    <td><span style="font-size: 0.85rem; color: var(--text-muted);">None required</span></td>
+                                </tr>
+                                <!-- Sighting 3 -->
+                                <tr id="inquiry-row-3">
+                                    <td>Emily Rose</td>
+                                    <td>Kruger Big Five Tracking</td>
+                                    <td>Sep 15, 2026</td>
+                                    <td>4 Guests</td>
+                                    <td><span class="badge-status pending" id="status-span-3">Pending</span></td>
+                                    <td id="actions-td-3">
+                                        <div style="display: flex; gap: 8px;">
+                                            <button class="btn-action-approve" onclick="auditInquiry(3, 'approve')">Approve</button>
+                                            <button class="btn-action-reject" onclick="auditInquiry(3, 'reject')">Reject</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Manage Tour Packages View -->
+            <div class="dashboard-view" id="view-packages">
+                <div class="table-card">
+                    <h2 style="margin-bottom: 24px;">Manage Safari Pricing</h2>
+                    <div class="admin-packages-grid">
+                        <!-- Package 1 -->
+                        <div class="admin-package-card">
+                            <div class="admin-package-img">
+                                <img src="assets/opt_photo-1547471080-7cc2caa01a7e_3db2599c.webp" alt="Serengeti">
+                            </div>
+                            <div class="admin-package-info">
+                                <h3>Serengeti Predator Chase</h3>
+                                <span class="admin-package-price" id="pkg-price-1">$3,450</span>
+                                <button class="btn-edit-price" onclick="openPriceModal(1, 'Serengeti Predator Chase')">Edit Price</button>
+                            </div>
+                        </div>
+                        <!-- Package 2 -->
+                        <div class="admin-package-card">
+                            <div class="admin-package-img">
+                                <img src="assets/opt_photo-1557050543-4d5f4e07ef46_be1be0f5.webp" alt="Okavango">
+                            </div>
+                            <div class="admin-package-info">
+                                <h3>Okavango Delta Water Safari</h3>
+                                <span class="admin-package-price" id="pkg-price-2">$4,900</span>
+                                <button class="btn-edit-price" onclick="openPriceModal(2, 'Okavango Delta Water Safari')">Edit Price</button>
+                            </div>
+                        </div>
+                        <!-- Package 3 -->
+                        <div class="admin-package-card">
+                            <div class="admin-package-img">
+                                <img src="assets/opt_photo-1516426122078-c23e76319801_44946e23.webp" alt="Masai Mara">
+                            </div>
+                            <div class="admin-package-info">
+                                <h3>Masai Mara Great Migration</h3>
+                                <span class="admin-package-price" id="pkg-price-3">$2,980</span>
+                                <button class="btn-edit-price" onclick="openPriceModal(3, 'Masai Mara Great Migration')">Edit Price</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 3. Vehicle Fleet View -->
+            <div class="dashboard-view" id="view-fleet">
+                <div class="table-card">
+                    <h2 style="margin-bottom: 24px;">Vehicle Fleet Management</h2>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Vehicle ID</th>
+                                    <th>Model</th>
+                                    <th>Status</th>
+                                    <th>Current Assignment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>T868 AAZ</td>
+                                    <td>Land Cruiser 4x4 (Open Top)</td>
+                                    <td><span class="badge-status approved">Deployed</span></td>
+                                    <td>Serengeti Predator Chase</td>
+                                </tr>
+                                <tr>
+                                    <td>T921 BBX</td>
+                                    <td>Land Cruiser V8 Extended</td>
+                                    <td><span class="badge-status pending">Maintenance</span></td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>K344 MNY</td>
+                                    <td>Custom Safari Jeep</td>
+                                    <td><span class="badge-status approved">Available</span></td>
+                                    <td>N/A</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Guide Roster View -->
+            <div class="dashboard-view" id="view-guides">
+                <div class="table-card">
+                    <h2 style="margin-bottom: 24px;">Guide Roster</h2>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Guide Name</th>
+                                    <th>Specialty</th>
+                                    <th>Status</th>
+                                    <th>Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Joseph Taraya</td>
+                                    <td>Big Cat Tracking</td>
+                                    <td><span class="badge-status approved">On Tour</span></td>
+                                    <td>★ 4.9</td>
+                                </tr>
+                                <tr>
+                                    <td>Elena Rostova</td>
+                                    <td>Primatology & Botany</td>
+                                    <td><span class="badge-status approved">Available</span></td>
+                                    <td>★ 4.95</td>
+                                </tr>
+                                <tr>
+                                    <td>Sipho Khumalo</td>
+                                    <td>Ornithology</td>
+                                    <td><span class="badge-status pending">On Leave</span></td>
+                                    <td>★ 4.8</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Financial Reports View -->
+            <div class="dashboard-view" id="view-finances">
+                <div class="table-card">
+                    <h2 style="margin-bottom: 24px;">Financial Reports</h2>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px;">
+                        <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">Monthly Revenue</span>
+                            <h3 style="font-size: 2rem; color: var(--primary); margin-top: 10px;">$142,500</h3>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">YTD Bookings</span>
+                            <h3 style="font-size: 2rem; color: var(--text-white); margin-top: 10px;">348</h3>
+                        </div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                            <span style="color: var(--text-muted); font-size: 0.9rem;">Conservation Donated</span>
+                            <h3 style="font-size: 2rem; color: #42b883; margin-top: 10px;">$21,375</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Site Contents View -->
+            <div class="dashboard-view" id="view-contents">
+                <div class="table-card" style="margin-bottom: 24px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <h2>Blog Posts Management</h2>
+                        <button class="btn-primary" style="padding: 8px 16px; font-size: 0.9rem; width: auto;" onclick="window.location.href='404.html'">+ New Post</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>The Great Migration Guide 2026</td>
+                                    <td>Guides</td>
+                                    <td>Oct 10, 2026</td>
+                                    <td><span class="badge-status approved">Published</span></td>
+                                    <td>
+                                        <div style="display: flex; gap: 8px;">
+                                            <button class="btn-action-approve" style="font-size: 0.8rem; padding: 4px 8px;" onclick="window.location.href='404.html'">Edit</button>
+                                            <button class="btn-action-reject" style="font-size: 0.8rem; padding: 4px 8px;" onclick="window.location.href='404.html'">Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Top 5 Photography Tips for Safari</td>
+                                    <td>Photography</td>
+                                    <td>Oct 15, 2026</td>
+                                    <td><span class="badge-status pending">Draft</span></td>
+                                    <td>
+                                        <div style="display: flex; gap: 8px;">
+                                            <button class="btn-action-approve" style="font-size: 0.8rem; padding: 4px 8px;" onclick="window.location.href='404.html'">Edit</button>
+                                            <button class="btn-action-reject" style="font-size: 0.8rem; padding: 4px 8px;" onclick="window.location.href='404.html'">Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="table-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <h2>Media Gallery</h2>
+                        <button class="btn-primary" style="padding: 8px 16px; font-size: 0.9rem; width: auto;" onclick="window.location.href='404.html'">Upload Media</button>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px;">
+                        <img src="assets/opt_photo-1547471080-7cc2caa01a7e_3db2599c.webp" style="width: 100%; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid var(--glass-border);" alt="Media">
+                        <img src="assets/opt_photo-1557050543-4d5f4e07ef46_be1be0f5.webp" style="width: 100%; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid var(--glass-border);" alt="Media">
+                        <img src="assets/opt_photo-1516426122078-c23e76319801_44946e23.webp" style="width: 100%; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid var(--glass-border);" alt="Media">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. System Settings View -->
+            <div class="dashboard-view" id="view-settings">
+                <div class="table-card">
+                    <h2 style="margin-bottom: 24px;">System Settings</h2>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="font-size: 1.1rem; color: var(--text-white); margin-bottom: 16px;">General Configuration</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <label style="display: block; color: var(--text-muted); margin-bottom: 8px; font-size: 0.9rem;">Site Name</label>
+                                <input type="text" value="WildJourneys" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.02); color: var(--text-white); outline: none;">
+                            </div>
+                            <div>
+                                <label style="display: block; color: var(--text-muted); margin-bottom: 8px; font-size: 0.9rem;">Support Email</label>
+                                <input type="email" value="support@wildjourneys.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.02); color: var(--text-white); outline: none;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <h3 style="font-size: 1.1rem; color: var(--text-white); margin-bottom: 16px;">Preferences</h3>
+                        <div style="display: flex; flex-direction: column; gap: 16px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <div>
+                                    <h4 style="color: var(--text-white); font-weight: 500;">Maintenance Mode</h4>
+                                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Temporarily disable the public website.</p>
+                                </div>
+                                <div style="width: 44px; height: 24px; background-color: rgba(255,255,255,0.1); border-radius: 12px; position: relative; cursor: pointer;">
+                                    <div style="width: 18px; height: 18px; background-color: var(--text-muted); border-radius: 50%; position: absolute; top: 3px; left: 3px;"></div>
+                                </div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <div>
+                                    <h4 style="color: var(--text-white); font-weight: 500;">Email Notifications</h4>
+                                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Receive an email for every new booking inquiry.</p>
+                                </div>
+                                <div style="width: 44px; height: 24px; background-color: var(--primary); border-radius: 12px; position: relative; cursor: pointer;">
+                                    <div style="width: 18px; height: 18px; background-color: var(--bg-dark); border-radius: 50%; position: absolute; top: 3px; right: 3px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end;">
+                        <button class="btn-primary" style="padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; width: auto;" onclick="window.location.href='404.html'">Save Settings</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Embark on unforgettable safari experiences with WildJourneys. Explore Serengeti, Kruger, and Masai Mara. Book your wildlife tourism adventure today.">
+    <title>WildJourneys | Luxury Wildlife Safaris & Eco-Tourism</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <svg class="brand-icon" viewBox="0 0 24 24">
+                <path d="M12,2A10,10,0,0,0,2,12A10,10,0,0,0,12,22A10,10,0,0,0,22,12A10,10,0,0,0,12,2ZM12,4A8,8,0,0,1,20,12A8,8,0,0,1,12,20A8,8,0,0,1,4,12A8,8,0,0,1,12,4Z"/>
+                <path d="M12,6C9,6,6.5,8,5.2,10.7C6.8,11.5,8.8,12,11,12C13.2,12,15.2,11.5,16.8,10.7C15.5,8,13,6,12,6Z" fill="#e5a93c"/>
+            </svg>
+            <span>stackly</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="safari.html">Safari</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="mobile-login"><a href="login.html" class="btn-login"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>Login</span></a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                <span>Login</span>
+            </a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Explore the Wild.<br>Create Memories.</h1>
+            <p>Experience the beauty of nature up close. Unforgettable safaris. Authentic adventures.</p>
+            <div class="hero-buttons">
+                <a href="404.html" class="btn-primary">
+                    <span>Explore Safaris</span>
+                    <svg viewBox="0 0 24 24">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+                <a href="404.html" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-location">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>Serengeti National Park, Tanzania</span>
+        </div>
+    </header>
+
+    <!-- Booking Widget Section -->
+    <div class="booking-widget-container">
+        <form class="booking-widget" action="safari.html" method="GET">
+            <div class="form-group">
+                <label for="destination">Where to go</label>
+                <select id="destination" name="destination">
+                    <option value="">Select Destination</option>
+                    <option value="serengeti">Serengeti, Tanzania</option>
+                    <option value="kruger">Kruger, South Africa</option>
+                    <option value="masaimara">Masai Mara, Kenya</option>
+                    <option value="okavango">Okavango Delta, Botswana</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">When</label>
+                <input type="date" id="date" name="date">
+            </div>
+            <div class="form-group">
+                <label for="safari-type">Safari Type</label>
+                <select id="safari-type" name="type">
+                    <option value="">Select Safari Type</option>
+                    <option value="photography">Photography Safari</option>
+                    <option value="luxury">Luxury Lodge</option>
+                    <option value="family">Family Adventure</option>
+                    <option value="camping">Classic Mobile Camping</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">Search Safaris</button>
+        </form>
+    </div>
+
+    <!-- Featured Safaris -->
+    <section class="featured-safaris">
+        <div class="section-header">
+            <span class="subtitle">Curated Adventures</span>
+            <h2>Our Most Popular Safaris</h2>
+        </div>
+        <div class="safari-grid">
+            <!-- Safari Card 1 -->
+            <div class="safari-card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">Best Seller</span>
+                    <img src="assets/opt_Elusive_Shadows_b9e1749f.webp">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>Tanzania</span>
+                        <span>6 Days / 5 Nights</span>
+                    </div>
+                    <h3>Serengeti Predator Chase</h3>
+                    <p>Track magnificent prides of lions and elusive leopards across the endless golden plains of the Serengeti, followed by a luxury stay in our private tented camp.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$3,450</span>
+                        </div>
+                        <a href="safari.html?id=serengeti" class="btn-card">View Tour</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Safari Card 2 -->
+            <div class="safari-card">
+                <div class="card-img-wrapper">
+                    <img src="assets/opt_Elephant_3dfd2529.webp">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>Botswana</span>
+                        <span>8 Days / 7 Nights</span>
+                    </div>
+                    <h3>Okavango Delta Water Safari</h3>
+                    <p>Navigate tranquil waterways by traditional mokoro canoe and encounter large herds of elephants, hippos, and rare bird species in this lush wetland paradise.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$4,900</span>
+                        </div>
+                        <a href="safari.html?id=okavango" class="btn-card">View Tour</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Safari Card 3 -->
+            <div class="safari-card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">Limited Time</span>
+                    <img src="assets/opt_home.1_329f6bbb.webp">
+                </div>
+                <div class="card-info">
+                    <div class="card-meta">
+                        <span>Kenya</span>
+                        <span>5 Days / 4 Nights</span>
+                    </div>
+                    <h3>Masai Mara Great Migration</h3>
+                    <p>Witness the world's most spectacular wildlife event as millions of wildebeests and zebras cross the Mara River, facing apex river predators.</p>
+                    <div class="card-footer">
+                        <div class="card-price">
+                            <span class="price-label">Per Person</span>
+                            <span class="price-value">$2,980</span>
+                        </div>
+                        <a href="safari.html?id=masaimara" class="btn-card">View Tour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Sightings Gallery -->
+    <section class="sightings-gallery" style="background-color: #16120e;">
+        <div class="section-header">
+            <span class="subtitle">Live Sightings</span>
+            <h2>Captured by Our Guides</h2>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-card">
+                <img src="assets/opt_lion_9933a657.webp">
+                <div class="gallery-card-overlay">
+                    <h4>Roaring Pride</h4>
+                    <p>Serengeti National Park • 2 hours ago</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="assets/opt_Sunset_Sentinel_2d817c9a.webp">
+                <div class="gallery-card-overlay">
+                    <h4>Sunset Sentinel</h4>
+                    <p>Masai Mara Reserve • 4 hours ago</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="assets/opt_small-elephant_58def434.webp">
+                <div class="gallery-card-overlay">
+                    <h4>Elusive Shadows</h4>
+                    <p>Kruger National Park • Today</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="assets/opt_photo-1502082553048-f009c37129b9_1f0c27c3.webp" alt="Acacia Tree">
+                <div class="gallery-card-overlay">
+                    <h4>Mara Sunrise</h4>
+                    <p>Masai Mara Reserve • Yesterday</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Features -->
+    <section class="why-us">
+        <div class="section-header">
+            <span class="subtitle">Our Commitment</span>
+            <h2>Why Travel with WildJourneys</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-box">
+                <div class="feature-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        <path d="M2 12h20"></path>
+                    </svg>
+                </div>
+                <h3>Eco-Conscious Eco-Tourism</h3>
+                <p>100% of our carbon footprint is offset, and 15% of all safari booking proceeds go directly into local community schools and anti-poaching units.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3>Expert Local Guides</h3>
+                <p>Learn from guides born and raised in local villages. With decades of combined tracking experience, they reveal the bush's secrets.</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon-wrapper">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <h3>Uncompromising Safety</h3>
+                <p>Our open-sided 4x4 vehicles are custom modified, routinely inspected, and equipped with satellite tracking and emergency medical kits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tailored Travel Styles Section -->
+    <section class="more-experiences" id="more-experiences">
+        <div class="section-header">
+            <span class="subtitle">Discover More</span>
+            <h2>Tailored Travel Styles</h2>
+        </div>
+        <div class="experience-grid">
+            <!-- Experience Card 1 -->
+            <div class="experience-card">
+                <div class="exp-img-wrapper">
+                    <span class="exp-badge">Exclusive</span>
+                    <img src="assets/opt_photo-1540962351504-03099e0a754b_58f34fea.webp" alt="Private Air Safaris">
+                </div>
+                <div class="exp-content">
+                    <h3>Private Air Safaris</h3>
+                    <p>Soar above the landscape in private aircraft, minimizing transit time and enjoying majestic aerial views of herds migrating below.</p>
+                    <a href="safari.html?type=luxury" class="btn-text">
+                        <span>Explore Luxury</span>
+                        <svg viewBox="0 0 24 24">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Experience Card 2 -->
+            <div class="experience-card">
+                <div class="exp-img-wrapper">
+                    <span class="exp-badge">Romantic</span>
+                    <img src="assets/opt_photo-1566073771259-6a8506099945_143965fd.webp" alt="Honeymoons & Romance">
+                </div>
+                <div class="exp-content">
+                    <h3>Honeymoons & Romance</h3>
+                    <p>Unwind in ultra-luxury suites with private plunge pools, candlelit bush dinners, and spectacular sunset views over the savanna.</p>
+                    <a href="safari.html?type=luxury" class="btn-text">
+                        <span>Explore Romance</span>
+                        <svg viewBox="0 0 24 24">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Experience Card 3 -->
+            <div class="experience-card">
+                <div class="exp-img-wrapper">
+                    <span class="exp-badge">Adventurous</span>
+                    <img src="assets/opt_photo-1501555088652-021faa106b9b_5cddd760.webp" alt="Walking Wild Safaris">
+                </div>
+                <div class="exp-content">
+                    <h3>Walking Wild Safaris</h3>
+                    <p>Step off the vehicle and track wildlife on foot with armed rangers. Discover the micro-ecosystems and tracking techniques of the bush.</p>
+                    <a href="safari.html?type=family" class="btn-text">
+                        <span>Explore Walking</span>
+                        <svg viewBox="0 0 24 24">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!-- Experience Card 4 -->
+            <div class="experience-card">
+                <div class="exp-img-wrapper">
+                    <span class="exp-badge">Expert-Led</span>
+                    <img src="assets/opt_photo-1444464666168-49d633b86797_c12252d3.webp" alt="Avian & Birding Tours">
+                </div>
+                <div class="exp-content">
+                    <h3>Avian & Birding Tours</h3>
+                    <p>Accompany master ornithologists to key habitats. Spot endemic and migratory species with professional spotting gear.</p>
+                    <a href="safari.html?type=photography" class="btn-text">
+                        <span>Explore Birding</span>
+                        <svg viewBox="0 0 24 24">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" style="background-color: #16120e;">
+        <div class="section-header">
+            <span class="subtitle">Guest Stories</span>
+            <h2>Memories That Last a Lifetime</h2>
+        </div>
+        <div class="testimonial-container">
+            <div class="testimonial-slide">
+                <p class="testimonial-quote">"The sunset game drive in the Serengeti was purely magical. Our guide knew exactly where to position the vehicle for the perfect shot of a leopard walking down a tree. An experience we will never forget."</p>
+                <div class="testimonial-author">
+                    <img src="assets/uifaces-popular-avatar (3) (1).webp" alt="Sarah & David" class="author-img">
+                    <span class="author-name">Sarah &amp; David Mitchell</span>
+                    <span class="author-role">Travel Photographers • London, UK</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <h4>stackly</h4>
+                <p>Creating immersive, authentic wildlife adventures that protect our planet's wild spaces and support indigenous communities.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.27l-4.2-.08c-4.7,0-5.8,3.5-5.8,5.7v1.6H5v4.6H8.5v12h5.3v-12h3.9l.5-4.6Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12,2.16c3.2,0,3.58,0,4.85.07,3.26.15,4.72,1.63,4.87,4.87,0,1.27.07,1.64.07,4.85s0,3.58-.07,4.85c-.15,3.23-1.61,4.71-4.87,4.87-1.27.07-1.64.07-4.85.07s-3.58,0-4.85-.07c-3.26-.15-4.72-1.63-4.87-4.87,0-1.27-.07-1.64-.07-4.85s0-3.58.07-4.85C2.45,3.87,3.91,2.39,7.15,2.23,8.42,2.17,8.8,2.16,12,2.16M12,0C8.74,0,8.33,0,7.05.07a12,12,0,0,0-4,1A8.25,8.25,0,0,0,.78,3.31,12,12,0,0,0,0,7.05C0,8.33,0,8.74,0,12s0,3.67.07,4.95a12,12,0,0,0,1,4,8.25,8.25,0,0,0,2.24,2.24,12,12,0,0,0,4,.78C8.33,24,8.74,24,12,24s3.67,0,4.95-.07a12,12,0,0,0,4-1a8.29,8.29,0,0,0,2.24-2.24,12,12,0,0,0,.78-4C24,15.67,24,15.26,24,12s0-3.67-.07-4.95a12,12,0,0,0-1-4,8.29,8.29,0,0,0-2.24-2.24,12,12,0,0,0-4-.78C15.67,0,15.26,0,12,0Z"/><path d="M12,5.83A6.17,6.17,0,1,0,18.17,12,6.17,6.17,0,0,0,12,5.83ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16Z"/><circle cx="18.4" cy="5.6" r="1.43"/></svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24"><path d="M23.5,6.2A3,3,0,0,0,21.4,4.1C19.5,3.6,12,3.6,12,3.6s-7.5,0-9.4.5A3,3,0,0,0,.5,6.2C0,8.1,0,12,0,12s0,3.9.5,5.8a3,3,0,0,0,2.1,2.1c1.9.5,9.4.5,9.4.5s7.5,0,9.4-.5a3,3,0,0,0,2.1-2.1C24,15.9,24,12,24,12S24,8.1,23.5,6.2ZM9.5,15.5V8.5L15.8,12Z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Destinations</h4>
+                <ul>
+                    <li><a href="404.html">Serengeti, Tanzania</a></li>
+                    <li><a href="404.html">Masai Mara, Kenya</a></li>
+                    <li><a href="404.html">Kruger, South Africa</a></li>
+                    <li><a href="404.html">Okavango, Botswana</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="404.html">Our Story</a></li>
+                    <li><a href="404.html">Safari Packages</a></li>
+                    <li><a href="404.html">Travel Journal</a></li>
+                    <li><a href="404.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Join the Pride</h4>
+                <div class="newsletter-form">
+                    <p>Subscribe for rare wildlife updates, early-bird package alerts, and conservation news.</p>
+                    <div class="newsletter-input-group">
+                        <input type="email" placeholder="Your Email Address" aria-label="Email address">
+                        <button type="submit">Join</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 stackly WildJourneys. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

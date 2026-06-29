@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access your personalized account.">
+    <title>Traveler Portal | WildJourneys</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="safari-login-body">
+    <div class="safari-container">
+        
+        <a href="index.html" class="back-home">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            <span>Back to Home</span>
+        </a>
+
+        <!-- Logo Header -->
+        <div class="safari-header">
+            <div class="safari-logo">
+                <svg viewBox="0 0 24 24" class="logo-icon">
+                    <path d="M12,2A10,10,0,0,0,2,12A10,10,0,0,0,12,22A10,10,0,0,0,22,12A10,10,0,0,0,12,2ZM12,4A8,8,0,0,1,20,12A8,8,0,0,1,12,20A8,8,0,0,1,4,12A8,8,0,0,1,12,4Z"/>
+                    <path d="M12,6C9,6,6.5,8,5.2,10.7C6.8,11.5,8.8,12,11,12C13.2,12,15.2,11.5,16.8,10.7C15.5,8,13,6,12,6Z" fill="#e5a93c"/>
+                </svg>
+                <span class="logo-text">stackly</span>
+            </div>
+            <div class="safari-subtitle">TRAVELER PORTAL</div>
+        </div>
+
+        <!-- Main Card -->
+        <div class="safari-card">
+            <div class="card-tabs">
+                <div class="tab active">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                    LOG IN
+                </div>
+                <div class="tab">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                    SIGN UP
+                </div>
+            </div>
+
+            <div class="card-content">
+                <div class="access-level-title">ACCESS YOUR SAFARI ITINERARY</div>
+                
+                <form>
+                    <div class="form-group">
+                        <label>ROLE</label>
+                        <div class="input-wrapper">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="input-icon"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                            <select name="role" id="role-select">
+                                <option value="traveler">Traveler</option>
+                                <option value="guide">Guide / Tracker</option>
+                                <option value="admin">Administrator</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>EMAIL ADDRESS</label>
+                        <div class="input-wrapper">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="input-icon"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <input type="email" placeholder="name@example.com">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-row">
+                            <label>PASSWORD</label>
+                            <a href="404.html" class="forgot-link">Forgot Password?</a>
+                        </div>
+                        <div class="input-wrapper">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="input-icon"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                            <input type="password" placeholder="••••••••">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="input-icon-right"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                        </div>
+                    </div>
+
+                    <label class="checkbox-row">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">Remember me</span>
+                    </label>
+
+                    <button type="button" class="submit-btn" onclick="handleLogin()">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        LOG IN
+                    </button>
+
+                    <div class="register-prompt">
+                        New to WildJourneys? <a href="404.html">SIGN UP NOW</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="safari-footer">
+            &copy; 2026 STACKLY WILDJOURNEYS. ALL RIGHTS RESERVED.
+        </div>
+    </div>
+
+    <script>
+        function handleLogin() {
+            const role = document.getElementById('role-select').value;
+            if (role === 'admin') {
+                window.location.href = 'admindashboard.html';
+            } else {
+                window.location.href = 'userdashboard.html';
+            }
+        }
+    </script>
+</body>
+</html>
