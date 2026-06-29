@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Mobile Nav Drawer Toggle
     const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('.nav-links') || document.querySelector('.sidebar-menu');
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -29,10 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.setAttribute('aria-expanded', expanded);
         });
         
-        // Close menu on link click (useful for hash links)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
+        // Close menu on link or button click
+        navLinks.querySelectorAll('a, button').forEach(item => {
+            item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                const spans = menuToggle.querySelectorAll('span');
+                spans.forEach(span => span.classList.remove('active'));
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
