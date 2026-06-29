@@ -1,0 +1,208 @@
+/* Admin Dashboard Specific Styles */
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+}
+
+/* Sidebar and general items inherit layout colors from userdashboard.css */
+/* Main Content Panel */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+/* Table styling for bookings and inquiries */
+.table-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 40px;
+}
+
+.table-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th {
+    padding: 16px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.admin-table td {
+    padding: 18px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95rem;
+    color: var(--text-white);
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Action button configurations */
+.btn-action-approve {
+    background-color: rgba(66, 184, 131, 0.1);
+    border: 1px solid rgba(66, 184, 131, 0.3);
+    color: #42b883;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-action-approve:hover {
+    background-color: #42b883;
+    color: var(--bg-dark);
+    border-color: #42b883;
+}
+
+.btn-action-reject {
+    background-color: rgba(229, 60, 60, 0.1);
+    border: 1px solid rgba(229, 60, 60, 0.3);
+    color: #e53c3c;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-action-reject:hover {
+    background-color: #e53c3c;
+    color: var(--text-white);
+    border-color: #e53c3c;
+}
+
+/* Manage packages layout */
+.admin-packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.admin-package-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.admin-package-card:hover {
+    border-color: var(--border-hover);
+}
+
+.admin-package-img {
+    height: 160px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.admin-package-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-package-info {
+    padding: 20px;
+}
+
+.admin-package-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.admin-package-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.btn-edit-price {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    color: var(--primary);
+    background: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-edit-price:hover {
+    background-color: var(--primary);
+    color: var(--bg-dark);
+}
+
+/* Modal form adjustments */
+.admin-modal-row {
+    display: flex;
+    gap: 20px;
+}
+
+/* Badges updates */
+.badge-status {
+    padding: 6px 12px;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.badge-status.pending {
+    background-color: rgba(229, 169, 60, 0.1);
+    color: var(--primary);
+    border: 1px solid var(--border-color);
+}
+
+.badge-status.approved {
+    background-color: rgba(66, 184, 131, 0.1);
+    color: #42b883;
+    border: 1px solid rgba(66, 184, 131, 0.2);
+}
+
+.badge-status.rejected {
+    background-color: rgba(229, 60, 60, 0.1);
+    color: #e53c3c;
+    border: 1px solid rgba(229, 60, 60, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .main-content {
+        padding: 20px;
+        height: auto;
+    }
+}

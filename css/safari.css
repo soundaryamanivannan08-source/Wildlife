@@ -1,0 +1,405 @@
+/* Safari Page Specific Styles */
+
+.safari-hero {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 8% 60px;
+    background-image: linear-gradient(to bottom, rgba(17, 14, 11, 0.4), rgba(17, 14, 11, 0.9)), url('../assets/opt_photo-1547471080-7cc2caa01a7e_452934de.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.safari-hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Safari Filtering & Search Bar */
+.filter-search-container {
+    background-color: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover, 
+.filter-btn.active {
+    background-color: var(--primary);
+    color: var(--bg-dark);
+    border-color: var(--primary);
+}
+
+.search-box {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+}
+
+.search-box input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    padding: 12px 16px 12px 40px;
+    color: var(--text-white);
+    outline: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-box svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: var(--text-muted);
+    stroke-width: 2;
+}
+
+/* Packages Listing Grid */
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 32px;
+}
+
+.package-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.package-card.hidden {
+    display: none !important;
+}
+
+/* Booking Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 14, 11, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.booking-modal {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    position: relative;
+    transform: translateY(30px);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-overlay.active .booking-modal {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    color: var(--text-white);
+    transform: rotate(90deg);
+}
+
+.modal-close svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.booking-modal h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.booking-modal p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.modal-form-row .form-group {
+    flex: 1;
+}
+
+.modal-form label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.modal-form input, 
+.modal-form select,
+.modal-form textarea {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 12px 16px;
+    color: var(--text-white);
+    outline: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.modal-form input:focus, 
+.modal-form select:focus,
+.modal-form textarea:focus {
+    border-color: var(--primary);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.modal-form select option {
+    background-color: var(--bg-card);
+    color: var(--text-white);
+}
+
+.modal-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.btn-modal-submit {
+    background-color: var(--primary);
+    border: none;
+    color: var(--bg-dark);
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(229, 169, 60, 0.25);
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.btn-modal-submit:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .filter-search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-group {
+        justify-content: center;
+    }
+    .search-box {
+        max-width: none;
+    }
+    .modal-form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .booking-modal {
+        padding: 30px 20px;
+    }
+}
+
+/* Best Time to Visit Section Styling */
+.best-time-section {
+    padding: 100px 8%;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+}
+
+.best-time-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.best-time-content {
+    text-align: left;
+}
+
+.best-time-content .subtitle {
+    color: #e5a93c; /* gold variable color */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.best-time-content h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    color: var(--text-white);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.best-time-content .subtitle-underline {
+    width: 60px;
+    height: 3px;
+    background-color: #e5a93c;
+    margin-bottom: 30px;
+}
+
+.best-time-content .intro-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.best-time-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.time-item {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.time-season {
+    font-weight: 700;
+    color: var(--text-white);
+    font-size: 1rem;
+}
+
+.time-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.best-time-image-wrapper {
+    width: 100%;
+    height: 460px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.best-time-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.best-time-image-wrapper img:hover {
+    transform: scale(1.03);
+}
+
+/* Responsive adjustments for Best Time section */
+@media (max-width: 992px) {
+    .best-time-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .best-time-image-wrapper {
+        height: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .best-time-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .time-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+    
+    .best-time-image-wrapper {
+        height: 280px;
+    }
+}
+

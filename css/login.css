@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.safari-login-body {
+    background-color: #110e0b;
+    background-image: radial-gradient(circle at center, #1f1a15 0%, #110e0b 100%);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f8f9fa;
+    position: relative;
+}
+
+.safari-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back-home {
+    position: absolute;
+    top: 40px;
+    left: 8%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #b8b3ad;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-home:hover {
+    color: #e5a93c;
+}
+
+/* Header */
+.safari-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.safari-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    fill: #e5a93c;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #f8f9fa;
+}
+
+.safari-subtitle {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #e5a93c;
+}
+
+/* Card */
+.safari-card {
+    background-color: #1f1a15;
+    border: 1px solid rgba(229, 169, 60, 0.2);
+    border-radius: 12px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    margin-bottom: 32px;
+}
+
+.card-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #b8b3ad;
+    cursor: pointer;
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab:hover:not(.active) {
+    color: #f8f9fa;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.tab.active {
+    color: #e5a93c;
+    border-bottom-color: #e5a93c;
+}
+
+.card-content {
+    padding: 40px;
+}
+
+.access-level-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #b8b3ad;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #e5a93c;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.label-row label {
+    margin-bottom: 0;
+}
+
+.forgot-link {
+    font-size: 12px;
+    color: #e5a93c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: #f8f9fa;
+    text-decoration: underline;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    color: #b8b3ad;
+}
+
+.input-icon-right {
+    position: absolute;
+    right: 16px;
+    color: #b8b3ad;
+    cursor: pointer;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 16px 16px 16px 44px;
+    color: #f8f9fa;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.3s ease;
+    appearance: none;
+}
+
+.input-wrapper select option {
+    background-color: #1f1a15;
+    color: #f8f9fa;
+}
+
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+    border-color: #e5a93c;
+    box-shadow: 0 0 0 1px #e5a93c;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.input-wrapper input::placeholder {
+    color: #6c757d;
+}
+
+/* Checkbox */
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    cursor: pointer;
+}
+
+.checkbox-row input {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border: 2px solid #b8b3ad;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.checkbox-row input:checked ~ .checkmark {
+    background-color: #e5a93c;
+    border-color: #e5a93c;
+}
+
+.checkbox-row input:checked ~ .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid #110e0b;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-row:hover .checkmark {
+    border-color: #e5a93c;
+}
+
+.checkbox-text {
+    font-size: 14px;
+    color: #b8b3ad;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    background-color: #e5a93c;
+    color: #110e0b;
+    border: none;
+    border-radius: 6px;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    margin-bottom: 24px;
+    box-shadow: 0 0 20px rgba(229, 169, 60, 0.25);
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #f3be5d;
+    box-shadow: 0 0 25px rgba(229, 169, 60, 0.4);
+    transform: translateY(-1px);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 0 10px rgba(229, 169, 60, 0.2);
+}
+
+/* Register Prompt */
+.register-prompt {
+    text-align: center;
+    font-size: 13px;
+    color: #b8b3ad;
+}
+
+.register-prompt a {
+    color: #e5a93c;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 4px;
+    transition: color 0.3s ease;
+}
+
+.register-prompt a:hover {
+    color: #f8f9fa;
+    text-decoration: underline;
+}
+
+/* Footer */
+.safari-footer {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #b8b3ad;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .back-home {
+        position: relative;
+        top: 0;
+        left: 0;
+        align-self: flex-start;
+        margin-bottom: 24px;
+    }
+    .safari-header {
+        margin-top: 10px;
+    }
+}
+
